@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="search-div-dim">
+    <form [formGroup]="searchForm">
+      <mat-form-field appearance="fill" class="button-width">
+        <mat-label>Search By</mat-label>
+        <mat-select formControlName="searchType">
+          <mat-option value="keyword">Keyword</mat-option>
+          <mat-option value="file">File</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="search-width">
+        <mat-label>Search PDB</mat-label>
+        <input matInput formControlName="searchField" type="text">
+        <button mat-icon-button matSuffix>
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+    </form>
+  </div>
+</div>
+
+<!-- <div class="search-container">
+  <div class="search-dim">
+    <mat-form-field appearance="fill" class="search-select">
+      <mat-label>Search Type</mat-label>
+      <mat-select>
+        <mat-option value="keyword">Keyword Search</mat-option>
+        <mat-option value="file">File Upload</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="search-bar">
+      <mat-label>Search</mat-label>
+      <input matInput placeholder="Advanced Search" />
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+</div> -->
