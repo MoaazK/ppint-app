@@ -23,7 +23,7 @@ npm ci
 ```bash
 npm start
 ```
-5. Navigate to `localhost:4200
+5. Navigate to `localhost:4200`
 
 ## App Structure
 - For styling, [Angular Material](https://v15.material.angular.io/) version 15.2.9 has been used
