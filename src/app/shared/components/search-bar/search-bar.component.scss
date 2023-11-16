@@ -1,16 +1,28 @@
 .container {
-  height: calc(100vh - 64px);
+  // height: calc(100vh - 64px);
   display: flex;
   align-items: center;
   justify-content: center;
   // background: linear-gradient(45deg, #014371, rgba(1, 67, 113, 0.7), #014371, #014371);
   // background-image: linear-gradient(45deg, rgb(1, 67, 113), rgba(1, 67, 113, 0.7), rgb(1, 67, 113), rgb(1, 67, 113));
-  // background: linear-gradient(to right, #3498db, #2c3e50);
-  background: linear-gradient(to top right, #4b5774, #3f51b5);
+  background: linear-gradient(to right, #3498db, #2c3e50);
 
   mat-form-field div.mat-mdc-text-field-wrapper {
     border-radius: 0px !important;
   }
+}
+
+.search-div-dim {
+  // width: 60vw;
+  min-width: 900px;
+}
+
+.button-width {
+  width: 13%;
+}
+
+.search-width {
+  width: 87%;
 }
 
 // .search-container {

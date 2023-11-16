@@ -1,0 +1,94 @@
+<mat-drawer-container>
+  <mat-drawer #drawer mode="over">
+    <form [formGroup]="searchForm">
+
+      <div class="mdl-grid search-container">
+        <div class="mdl-cell mdl-cell--6-col">
+          <mat-form-field appearance="fill">
+            <mat-label>Basic Search</mat-label>
+            <input matInput formControlName="basicSearch" placeholder="Keyword e.g. 'chek2'" type="text">
+          </mat-form-field>
+        </div>
+
+        <div class="mdl-cell mdl-cell--6-col">
+          <mat-form-field appearance="fill">
+            <mat-label>Uniprot ID</mat-label>
+            <input matInput formControlName="uniprotID" placeholder="e.g. 'O96017'" type="text">
+          </mat-form-field>
+      </div>
+
+        <div class="mdl-cell mdl-cell--6-col">
+          <mat-form-field appearance="fill">
+            <mat-label>Pfam Number</mat-label>
+            <input matInput formControlName="pfamNumber" type="text">
+          </mat-form-field>
+        </div>
+
+        <div class="mdl-cell mdl-cell--6-col">
+          <mat-form-field appearance="fill">
+            <mat-label>NCBI TaxID</mat-label>
+            <input matInput formControlName="ncbiTaxID" type="text">
+          </mat-form-field>
+        </div>
+
+        <div class="mdl-cell mdl-cell--6-col">
+          <mat-form-field appearance="fill">
+            <mat-label>Organism</mat-label>
+            <input matInput formControlName="organism" type="text">
+          </mat-form-field>
+        </div>
+
+        <div class="mdl-cell mdl-cell--6-col">
+          <mat-form-field appearance="fill">
+            <mat-label>Enzyme Commission Number</mat-label>
+            <input matInput formControlName="enzymeCommissionNumber" type="text">
+          </mat-form-field>
+        </div>
+
+        <div class="mdl-cell mdl-cell--6-col">
+          <mat-form-field appearance="fill">
+            <mat-label>PDB ID</mat-label>
+            <input matInput formControlName="pdbID" type="text">
+          </mat-form-field>
+        </div>
+
+        <div class="mdl-cell mdl-cell--6-col">
+          <mat-form-field appearance="fill">
+            <mat-label>Experimental Method</mat-label>
+            <mat-select formControlName="experimentalMethod">
+              <mat-option value="xray">X-Ray Diffraction</mat-option>
+              <mat-option value="file">File</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="mdl-cell mdl-cell--6-col">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [rangePicker]="picker" [max]="maxDate">
+              <input matStartDate formControlName="startDate" placeholder="Start date">
+              <input matEndDate formControlName="endDate" placeholder="End date">
+            </mat-date-range-input>
+            <mat-hint>MM/DD/YYYY - MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+
+            <!-- <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+            <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error> -->
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="mdl-cell mdl-cell--6-col"></div>
+      <div class="mdl-cell mdl-cell--6-col">
+        <button mat-raised-button type="submit" [disabled]="!searchForm.valid" (click)="search()" color="primary">Search</button>
+      </div>
+
+    </form>
+  </mat-drawer>
+
+  <!-- <mat-drawer-content style="padding: 20px 50px;"> -->
+  <mat-drawer-content>
+    <ng-content></ng-content>
+  </mat-drawer-content>
+
+</mat-drawer-container>

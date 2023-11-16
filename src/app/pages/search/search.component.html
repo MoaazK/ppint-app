@@ -1,0 +1,18 @@
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="search-tab-icon">table</mat-icon>
+      Data
+    </ng-template>
+    <mat-divider></mat-divider>
+    <app-grid></app-grid>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="search-tab-icon">ssid_chart</mat-icon>
+      Visualizations
+    </ng-template>
+    <mat-divider></mat-divider>
+    <app-visualization></app-visualization>
+  </mat-tab>
+</mat-tab-group>

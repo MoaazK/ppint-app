@@ -1,1 +1,11 @@
-<p>statistics works!</p>
+<div class="mdl-grid">
+  <div *ngFor="let graph of graphData" class="mdl-cell mdl-cell--6-col">
+    <plotly-plot
+      [data]="graph?.data"
+      [layout]="graph?.layout"
+      [useResizeHandler]="true"
+      [style]="{position: 'relative', width: '100%', height: '100%'}"
+      [config]="{displaylogo: false}"
+    ></plotly-plot>
+  </div>
+</div>

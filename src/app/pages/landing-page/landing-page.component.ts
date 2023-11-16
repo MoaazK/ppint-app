@@ -1,43 +1,45 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Subject, takeUntil } from 'rxjs';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
-export class LandingPageComponent implements OnInit, OnDestroy {
-  KEYWORD_SEARCH = 'keyword';
-  FILE_UPLOAD = 'file';
+export class LandingPageComponent {
+  // KEYWORD_SEARCH = 'keyword';
+  // FILE_UPLOAD = 'file';
 
-  _onDestroy: Subject<void>;
+  // _onDestroy: Subject<void>;
 
-  searchForm!: FormGroup;
+  // searchForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
-    this._onDestroy = new Subject<void>();
-  }
+  // constructor(private formBuilder: FormBuilder, private advancedSearchService: AdvancedSearchService) {
+  //   this._onDestroy = new Subject<void>();
+  // }
 
-  ngOnInit(): void {
-    this.searchForm = this.formBuilder.group({
-      searchType: [this.KEYWORD_SEARCH],
-      searchField: ['']
-    });
+  // ngOnInit(): void {
+  //   this.searchForm = this.formBuilder.group({
+  //     searchType: [this.KEYWORD_SEARCH],
+  //     searchField: ['']
+  //   });
 
-    this.searchForm.get('searchType')?.valueChanges
-      .pipe(takeUntil(this._onDestroy))
-      .subscribe(val => {
-        if (val === this.KEYWORD_SEARCH) {
-          //
-        } else {
+  //   this.searchForm.get('searchType')?.valueChanges
+  //     .pipe(takeUntil(this._onDestroy))
+  //     .subscribe(val => {
+  //       if (val === this.KEYWORD_SEARCH) {
+  //         //
+  //       } else {
 
-        }
-      });
-  }
+  //       }
+  //     });
+  // }
 
-  ngOnDestroy(): void {
-    this._onDestroy.next();
-    this._onDestroy.complete();
-  }
+  // onAdvancedClick(): void {
+  //   this.advancedSearchService.toggle();
+  // }
+
+  // ngOnDestroy(): void {
+  //   this._onDestroy.next();
+  //   this._onDestroy.complete();
+  // }
 }

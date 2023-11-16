@@ -1,9 +1,10 @@
 <mat-toolbar [color]=toolbarColor>
   <div class="toolbar-button-row">
-    <a mat-button mat-flat-button routerLink="/" routerLinkActive="active-link" [color]=toolbarColor>Home</a>
-    <a mat-button mat-flat-button routerLink="/statistics" [color]=toolbarColor>Statistics</a>
-    <a mat-button mat-flat-button routerLink="/downloads" [color]=toolbarColor>Additional Info & Downloads</a>
-    <a mat-button mat-flat-button routerLink="/tutorial" [color]=toolbarColor>Tutorial</a>
-    <a mat-button mat-flat-button routerLink="/about" [color]=toolbarColor>About</a>
+    <a mat-button mat-flat-button routerLink="/" [color]=toolbarColor>Home</a>
+    <a mat-button mat-flat-button routerLink="/statistics" routerLinkActive="active-link" [color]=toolbarColor>Statistics</a>
+    <a mat-button mat-flat-button routerLink="/downloads" routerLinkActive="active-link" [color]=toolbarColor>Additional Info & Downloads</a>
+    <a mat-button mat-flat-button routerLink="/tutorial" routerLinkActive="active-link" [color]=toolbarColor>Tutorial</a>
+    <a mat-button mat-flat-button routerLink="/about" routerLinkActive="active-link" [color]=toolbarColor>About</a>
+    <app-search-bar *ngIf="!isLandingPage" style="padding-top: 4px; padding-left: 200px;"></app-search-bar>
   </div>
 </mat-toolbar>

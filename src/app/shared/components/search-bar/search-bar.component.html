@@ -1,0 +1,19 @@
+<div class="search-div-dim">
+  <form [formGroup]="searchForm">
+    <mat-form-field appearance="fill" class="button-width">
+      <mat-label>Search By</mat-label>
+      <mat-select formControlName="searchType">
+        <mat-option value="keyword">Keyword</mat-option>
+        <mat-option value="file">File</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="search-width">
+      <mat-label>Search PDB</mat-label>
+      <input matInput formControlName="searchField" placeholder="Enter PDB IDs comma or white-space separated e.g. 4D2I, 4Q4W" type="text">
+      <a mat-button matSuffix (click)="onAdvancedClick()">Advanced</a>
+      <button mat-icon-button matSuffix (click)="onSearchClick()">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
+</div>

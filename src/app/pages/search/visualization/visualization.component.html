@@ -1,0 +1,15 @@
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--3-col">
+    <mat-form-field appearance="fill">
+      <mat-label>Interface</mat-label>
+      <mat-select [(value)]="selectedInterface">
+        <mat-option *ngFor="let interface of interfaceList" value="interface.interface_id">
+          {{interface['interface_id'] | uppercase}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="mdl-cell mdl-cell--9-col">
+    <h1>Visualization</h1>
+  </div>
+</div>

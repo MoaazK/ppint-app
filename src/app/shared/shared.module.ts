@@ -1,10 +1,9 @@
-import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
+import { MaterialModule } from './modules/material/material.module';
 import * as fromComponents from './components';
 
 
@@ -14,20 +13,13 @@ import * as fromComponents from './components';
   ],
   imports: [
     RouterModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    CommonModule
+    MaterialModule,
+    CommonModule,
+    ReactiveFormsModule
   ],
   exports: [
+    MaterialModule,
     ...fromComponents.components
   ]
 })
-export class SharedModule {
-  /* make sure SharedModule is imported only by the AppModule and none else */
-  constructor(@Optional() @SkipSelf() presentInParent: SharedModule) {
-    if (presentInParent) {
-      throw new Error('SharedModule is already loaded. Import only in AppModule');
-    }
-  }
-}
+export class SharedModule { }

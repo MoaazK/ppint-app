@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'downloads', loadChildren: () => import('./pages/downloads/downloads.module').then(m => m.DownloadsModule) },
   { path: 'tutorial', loadChildren: () => import('./pages/tutorial/tutorial.module').then(m => m.TutorialModule) },
   { path: 'about', loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule) },
+  { path: 'search', loadChildren: () => import('./pages/search/search.module').then(m => m.SearchModule) },
   // { path: '', redirectTo: '' },
   { path: '**', redirectTo: '' }
 ];
